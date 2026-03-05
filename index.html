@@ -8,7 +8,74 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
   <style>
-    /* All CSS goes here */
+    
+    *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    :root {
+    --bg:      #f5f3ef;   /* off-white page background */
+    --surface: #ffffff;   /* cards and nav */
+    --border:  #e4e0d8;   /* subtle borders */
+    --text:    #18180f;   /* near-black */
+    --muted:   #7a776d;   /* grey body text */
+    --accent:  #1a5c3a;   /* green accent */
+
+    /* Category colours for your project tags */
+    --cs-bg: #eef2ff;  --cs-fg: #3730a3;   /* C# — blue */
+    --py-bg: #fefce8;  --py-fg: #854d0e;   /* Python — yellow */
+    --ml-bg: #fdf2f8;  --ml-fg: #9d174d;   /* ML — pink */
+    --and-bg: #ecfdf5; --and-fg: #065f46;  /* Android — green */
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+
+
+nav {
+  position: fixed;    /* stays on screen while scrolling */
+  top: 0; left: 0; right: 0;
+  z-index: 100;       /* sits on top of everything */
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  background: rgba(245,243,239,.93);
+  backdrop-filter: blur(12px);  /* frosted glass effect */
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'DM Mono', monospace;
+  font-size: .85rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+
+.nav-links a {
+  font-size: .85rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--text); }
+
+    
+
   </style>
 </head>
 <body>
